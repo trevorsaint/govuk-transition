@@ -24,9 +24,16 @@
 
       <p>You’ll get updates when we make changes to, or add information about: <span class="govuk-body govuk-!-font-weight-bold">News and communications</span>.</p>
 
-      {{ govukInsetText({
-        text: "You can unsubscribe at any time."
-      }) }}
+      {# {{ govukInsetText({
+        html: "You can decide how often you are sent emails. <br> You can unsubscribe at any time."
+      }) }} #}
+
+      <p class="govuk-!-margin-bottom-2">You can:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>decide how often you are sent emails</li>
+        <li>unsubscribe at any time</li>
+      </ul>
 
       <form method="post">
 
