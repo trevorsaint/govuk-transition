@@ -23,7 +23,10 @@
       <h1 class="govuk-heading-xl">Get email updates</h1>
 
       <p>You’ll get updates when we make changes to, or add information about: <span class="govuk-body govuk-!-font-weight-bold">News and communications</span>.</p>
-      <p>You can decide how often you are sent emails. And you can stop receiving them at any time.</p>
+
+      {{ govukInsetText({
+        text: "You can unsubscribe at any time."
+      }) }}
 
       <form method="post">
 
