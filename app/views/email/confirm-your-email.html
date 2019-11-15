@@ -1,0 +1,44 @@
+{% extends "layout-email.html" %}
+
+
+{% block pageTitle %}
+  Confirm your email address - GOV.UK
+{% endblock %}
+
+
+{% set mainClasses = mainClasses | default("govuk-main-wrapper--email") %}
+
+
+{% block content %}
+
+  <h1 class="govuk-heading-l">Confirm your email address</h1>
+
+  <p>Confirm your email address to activate your subscription for updates on <span class="govuk-body govuk-!-font-weight-bold">News and communications</span>.</p>
+
+  {{ govukButton({
+    text: "Confirm email",
+    classes: "govuk-!-margin-bottom-0",
+    href: "#"
+  }) }}
+
+  {{ govukInsetText({
+    text: "This link will stop working in 7 days."
+  }) }}
+
+  <p>Find out <a class="govuk-link govuk-link--no-visited-state" href="#">how we use and protect your data</a>.</p>
+
+  <h2 class="govuk-heading-m">What happens next?</h2>
+
+  <p>Once you confirm your email address, you will be sent updates when new information is added. You can later change how often you receive these updates.</p>
+
+  <h2 class="govuk-heading-m">Don’t recognise this email?</h2>
+
+  <p>Ignore or delete this email if you didn’t request it.</p>
+
+  <p><a class="govuk-link govuk-link--no-visited-state" href="#">Contact GOV.UK</a> if you have any problems with your email subscriptions.</p>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><a class="govuk-link govuk-link--no-visited-state" href="#">Unsubscribe</a> to stop getting updates about News and communications.</p>
+
+{% endblock %}

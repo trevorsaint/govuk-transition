@@ -44,8 +44,6 @@
   }) }}
 {% endblock %}
 
-{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing  govuk-main-wrapper--brexit") %}
-
 {% if useAutoStoreData %}
   {% block footer %}
     {{ govukFooter({
