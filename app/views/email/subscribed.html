@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  You’ve subscribed - GOV.UK
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "You’ve subscribed"
+      }) }}
+
+      <p><a class="govuk-link govuk-link--no-visited-state" href="/">Manage your subscription</a> to change how often you receive updates.</p>
+
+    </div>
+
+  </div>
+
+{% endblock %}

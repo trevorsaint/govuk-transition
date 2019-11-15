@@ -1,0 +1,16 @@
+// Usage
+// background-color: govuk-brexit-colour("blue");
+
+$govuk-brexit-colour: (
+  "blue": #182D4E,
+  "red": #E61E32,
+  "dark-red": #BC1526,
+  "darkgrey": #b1b4b6,
+  "lightgrey": #f8f8f8
+) !default;
+
+
+@function govuk-brexit-colour($color) {
+  $result: map-get($govuk-brexit-colour, $color);
+  @return $result;
+}

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  When do you want to be updated about changes? - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+        {{ govukRadios({
+          idPrefix: "get-updated",
+          name: "get-updated",
+          fieldset: {
+            legend: {
+              text: "When do you want to be updated about changes?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "Select one option."
+          },
+          items: [
+            {
+              value: "as-soon-as-they-happen",
+              text: "As soon as they happen"
+            },
+            {
+              value: "once-a-day",
+              text: "Once a day"
+            },
+            {
+              value: "once-a-week",
+              text: "Once a week"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+
+  </div>
+
+{% endblock %}

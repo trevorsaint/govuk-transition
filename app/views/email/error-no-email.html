@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Error: Get email updates - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "You must provide your email address",
+            href: "#your-email-error"
+          }
+        ]
+      }) }}
+
+      <h1 class="govuk-heading-xl">Get email updates</h1>
+
+      <p>You’ll get updates when we make changes to, or add information about: <span class="govuk-body govuk-!-font-weight-bold">News and communications</span>.</p>
+      <p>You can decide how often you are sent emails. And you can stop receiving them at any time.</p>
+
+      <form method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Your email"
+          },
+          id: "your-email",
+          name: "your-email",
+          type: "email",
+          errorMessage: {
+            text: "Enter an email address"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      <p>Find out <a class="govuk-link govuk-link--no-visited-state" href="/">how we use and protect your data</a>.</p>
+
+    </div>
+
+  </div>
+
+{% endblock %}

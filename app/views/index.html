@@ -1,0 +1,57 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    {# <h1 class="govuk-heading-xl">
+      The GOV.UK Prototype Kit
+      <span class="govuk-caption-xl">{{releaseVersion}}</span>
+    </h1>{{releaseVersion | log }} #}
+
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Double opt-in</span>
+      Email subscriptions
+    </h1>
+
+    <p class="govuk-body-l">Review each page individually for content changes.</p>
+
+    {{ govukInsetText({
+      text: "We will have an interactive flow very soon"
+    }) }}
+
+    <h2 class="govuk-heading-m">Individual pages</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/">Get email updates</a></li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/get-updated">When do you want to be updated about changes?</a></li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/check-email">Check your email to confirm your subscription</a></li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/unsubscribe">Are you sure you want to unsubscribe?</a></li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/unsubscribe-everything">Are you sure you want to unsubscribe from everything?</a></li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/subscribed">You’ve subscribed</a></li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/unsubscribed-already">You’ve already unsubscribed</a></li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/email-link-expired">Email link expired</a></li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/delete-your-email">Are you sure you want to delete your email</a></li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/change-email">Change your email address</a></li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Individual error pages</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/error-invalid-email">Enter a valid email address</a></li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/error-no-email">Enter an email address</a></li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/error-choose-updates">You must choose when you want to receive updates</a></li>
+    </ul>
+
+  </div>
+
+</div>
+
+{% endblock %}

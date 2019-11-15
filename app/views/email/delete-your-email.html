@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Are you sure you want to delete your email? - GOV.UK
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Are you sure you want to delete your email?</h1>
+
+      <p>You will no longer be able to manage your email subsciptions, if you have any.</p>
+
+      <form method="post">
+
+        {{ govukButton({
+          text: "Unsubscribe"
+        }) }}
+
+      </form>
+
+      <p><a class="govuk-link govuk-link--no-visited-state" href="/">Cancel</a></p>
+
+    </div>
+
+  </div>
+
+{% endblock %}
