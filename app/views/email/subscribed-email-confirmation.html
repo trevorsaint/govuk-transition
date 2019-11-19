@@ -1,0 +1,33 @@
+{% extends "layout-email.html" %}
+
+
+{% block pageTitle %}
+  Update - GOV.UK
+{% endblock %}
+
+
+{% set mainClasses = mainClasses | default("govuk-main-wrapper--email") %}
+
+
+{% block content %}
+
+  <p>Subscription confirmed on GOV.UK.</p>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p>You will now be sent updates on: <b>News and communications</b>.</p>
+
+  <p>Manage your subscription to change how often you receive updates.</p>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  {{ govukInsetText({
+    html: 'You’re getting this email because you subscribed to immediate updates to ‘News and communications’ on GOV.​UK.'
+  }) }}
+
+
+  <p><a class="govuk-link govuk-link--no-visited-state" href="#">View, unsubscribe or change the frequency of your subscriptions</a></p>
+
+  <p>Is this email useful? <a class="govuk-link govuk-link--no-visited-state" href="#">Answer some questions to tell us more</a>.</p>
+
+{% endblock %}

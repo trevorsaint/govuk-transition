@@ -36,3 +36,17 @@
 {% block pageTitle %}
   GOV.UK Prototype Kit
 {% endblock %}
+
+{% set htmlClasses = "govuk-template--email" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    containerClasses: "govuk-header__container--email",
+    homepageUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
