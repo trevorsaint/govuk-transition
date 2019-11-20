@@ -15,19 +15,16 @@
 
   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-  <p>You will now be sent updates on: <b>News and communications</b>.</p>
+  {{ govukInsetText({
+    html: 'You’re getting this email because you subscribed to updates on <b>News and communications</b>.'
+  }) }}
 
-  <p>Manage your subscription to change how often you receive updates.</p>
+  <p>You can <a class="govuk-link govuk-link--no-visited-state" href="#">manage your subscription</a> to change how often you receive updates.</p>
+
+  <p><a class="govuk-link govuk-link--no-visited-state" href="#">Contact GOV.UK</a> if you have any problems with your email subscriptions.</p>
 
   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-  {{ govukInsetText({
-    html: 'You’re getting this email because you subscribed to immediate updates to ‘News and communications’ on GOV.​UK.'
-  }) }}
-
-
-  <p><a class="govuk-link govuk-link--no-visited-state" href="#">View, unsubscribe or change the frequency of your subscriptions</a></p>
-
-  <p>Is this email useful? <a class="govuk-link govuk-link--no-visited-state" href="#">Answer some questions to tell us more</a>.</p>
+  <p><a class="govuk-link govuk-link--no-visited-state" href="#">Unsubscribe</a> to stop receiving updates on <b>News and communications</b>.</p>
 
 {% endblock %}
