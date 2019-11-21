@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  Email subscriptions - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -16,47 +16,97 @@
       Email subscriptions
     </h1>
 
-    <p class="govuk-body-l">Review each page individually for content changes.</p>
 
-    <p>We will have an interactive flow very soon.</p>
+    {{ govukButton({
+      text: "Start now",
+      href: "/email/",
+      isStartButton: true
+    }) }}
 
-    <h2 class="govuk-heading-m">Demo</h2>
 
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/">Get email updates</a></li>
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/get-updated">When do you want to be updated about changes?</a></li>
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/check-email">Check your email to confirm your subscription</a></li>
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/confirm-your-email">Confirm your email</a> (double opt-in)</li>
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/subscribed">You’ve subscribed</a></li>
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/subscribed-email-confirmation">You’ve subscribed email confirmation</a></li>
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/manage-your-subscriptions">Manage your subscriptions</a></li>
-    </ul>
+    <hr class="govuk-section-break govuk-section-break--m">
 
-    <h2 class="govuk-heading-m">Other pages</h2>
 
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/unsubscribe">Are you sure you want to unsubscribe?</a></li>
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/unsubscribe-everything">Are you sure you want to unsubscribe from everything?</a></li>
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/unsubscribed-already">You’ve already unsubscribed</a></li>
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/email-link-expired">Your link has expired</a></li>
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/delete-your-email">Are you sure you want to delete your email</a></li>
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/change-email">Change your email address</a></li>
-    </ul>
+    {% set journeyPages %}
+      <ul class="govuk-list">
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/">Get email updates</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/get-updated">When do you want to be updated about changes?</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/check-email">Check your email to confirm your subscription</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/confirm-your-email">Confirm your email</a> (double opt-in)</li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/subscribed">You’ve subscribed</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/subscribed-email-confirmation">You’ve subscribed email confirmation</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/manage-your-subscriptions">Manage your subscriptions</a></li>
+      </ul>
+    {% endset %}
 
-    <h2 class="govuk-heading-m">Error pages</h2>
 
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/error-invalid-email">Enter a valid email address</a></li>
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/error-no-email">Enter your email address</a></li>
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/error-choose-updates">You must choose when you want to receive updates</a></li>
-    </ul>
+    {% set otherPages %}
+      <ul class="govuk-list">
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/unsubscribe">Are you sure you want to unsubscribe?</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/unsubscribe-everything">Are you sure you want to unsubscribe from everything?</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/unsubscribed-already">You’ve already unsubscribed</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/email-link-expired">Your link has expired</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/delete-your-email">Are you sure you want to delete your email</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/change-email">Change your email address</a></li>
+      </ul>
+    {% endset %}
 
-    <h2 class="govuk-heading-m">Email</h2>
 
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/confirm-your-email">Confirm your email</a> (double opt-in)</li>
-      <li><a class="govuk-link govuk-link--no-visited-state" href="/email/update-on-govuk">Update on GOV.UK</a> (existing email)</li>
-    </ul>
+    {% set errorPages %}
+      <ul class="govuk-list">
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/error-invalid-email">Enter a valid email address</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/error-no-email">Enter your email address</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/error-choose-updates">You must choose when you want to receive updates</a></li>
+      </ul>
+    {% endset %}
+
+
+    {% set email %}
+      <ul class="govuk-list">
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/confirm-your-email">Confirm your email</a> (double opt-in)</li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/email/update-on-govuk">Update on GOV.UK</a> (existing email)</li>
+      </ul>
+    {% endset %}
+
+
+    {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+        {
+          heading: {
+            text: "Journey pages"
+          },
+          content: {
+            html: journeyPages
+          }
+        },
+        {
+          heading: {
+            text: "Other pages"
+          },
+          content: {
+            html: otherPages
+          }
+        },
+          {
+          heading: {
+            text: "Error pages"
+          },
+          content: {
+            html: errorPages
+          }
+        },
+          {
+          heading: {
+            text: "Emails"
+          },
+          content: {
+            html: email
+          }
+        }
+      ]
+    }) }}
+
 
   </div>
 

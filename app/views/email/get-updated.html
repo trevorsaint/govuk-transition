@@ -2,14 +2,20 @@
 
 
 {% block pageTitle %}
-  When do you want to be updated about changes? - GOV.UK
+
+  {% if errors %}
+    Error: When do you want to be updated about changes? - GOV.UK
+  {% else %}
+    When do you want to be updated about changes? - GOV.UK
+  {% endif %}
+
 {% endblock %}
 
 
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "/"
+    href: "/email"
   }) }}
 {% endblock %}
 
@@ -19,6 +25,22 @@
   <div class="govuk-grid-row">
 
     <div class="govuk-grid-column-two-thirds">
+
+      {% if errors %}
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+
+        <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+
+        <div class="govuk-error-summary__body">
+
+          <ul class="govuk-list govuk-error-summary__list">
+            <li><a href="#your-email-error">{{summaryError}}</a></li>
+          </ul>
+
+        </div>
+
+      </div>
+      {% endif %}
 
       <form method="post">
 
@@ -38,17 +60,26 @@
           items: [
             {
               value: "as-soon-as-they-happen",
-              text: "As soon as they happen"
+              text: "As soon as they happen",
+              checked: checked('get-updated', 'as-soon-as-they-happen')
             },
             {
               value: "once-a-day",
-              text: "Once a day"
+              text: "Once a day",
+              checked: checked('get-updated', 'once-a-day')
             },
             {
               value: "once-a-week",
-              text: "Once a week"
+              text: "Once a week",
+              checked: checked('get-updated', 'once-a-week')
+            },
+            {
+              value: "once-a-month",
+              text: "Once a month",
+              checked: checked('get-updated', 'once-a-month')
             }
-          ]
+          ],
+          errorMessage: inlineError
         }) }}
 
         {{ govukButton({

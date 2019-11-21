@@ -2,7 +2,13 @@
 
 
 {% block pageTitle %}
-  Get email updates - GOV.UK
+
+  {% if errors %}
+    Error: Get email updates - GOV.UK
+  {% else %}
+    Get email updates - GOV.UK
+  {% endif %}
+
 {% endblock %}
 
 
@@ -20,6 +26,22 @@
 
     <div class="govuk-grid-column-two-thirds">
 
+      {% if errors %}
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+
+        <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+
+        <div class="govuk-error-summary__body">
+
+          <ul class="govuk-list govuk-error-summary__list">
+            <li><a href="#your-email-error">{{summaryError}}</a></li>
+          </ul>
+
+        </div>
+
+      </div>
+      {% endif %}
+
       <h1 class="govuk-heading-xl">Get email updates</h1>
 
       <p>You’ll get updates when we make changes to, or add information about: <span class="govuk-body govuk-!-font-weight-bold">News and communications</span>.</p>
@@ -31,7 +53,7 @@
         <li>unsubscribe at any time</li>
       </ul>
 
-      <form method="post">
+      <form method="post" novalidate="true">
 
         {{ govukInput({
           label: {
@@ -40,7 +62,13 @@
           },
           id: "your-email",
           name: "your-email",
-          type: "email"
+          type: "email",
+          attributes: {
+            autocomplete: "off",
+            spellcheck: "false"
+          },
+          value: data["your-email"],
+          errorMessage: inlineError
         }) }}
 
         {{ govukButton({
