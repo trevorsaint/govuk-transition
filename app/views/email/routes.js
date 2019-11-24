@@ -1,8 +1,3 @@
-// https://blog.mailtrap.io/sending-emails-with-nodemailer
-// https://blog.stvmlbrn.com/2018/09/06/send-html-email-in-node.html
-// https://www.mycodingblog.com/post/node-email-templates
-
-
 // Core dependencies
 const path = require('path');
 
@@ -11,8 +6,8 @@ const path = require('path');
 const express    = require('express');
 const router     = express.Router();
 const dotenv     = require('dotenv');
-const nodemailer = require('nodemailer');
 const Email      = require('email-templates');
+
 
 const { check, validationResult } = require('express-validator');
 
@@ -21,35 +16,31 @@ const { check, validationResult } = require('express-validator');
 dotenv.config();
 
 
-// Email templates
-const templateConfirm    = path.join(__dirname, '../emails/confirm/');
-const templateSubscribed = path.join(__dirname, '../emails/subscribed/');
+// Email template
+const templateConfirm = path.join(__dirname, '../templates/confirm/');
+const templateSubscribed = path.join(__dirname, '../templates/subscribed/');
 
 
-// Nodemailer
-const transport = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD
-  }
- });
-
-
-// Email configurations
 const email = new Email({
-  treansport: transport,
-  send: true,
-  preview: false,
-  views: {
-    root: path.resolve('emails'),
-    options: {
-      extension: 'njk',
-      map: {
-        njk: 'nunjucks'
-      }
+  message: {
+    from: 'gov.uk.doubleoptin@gmail.com'
+  },
+  transport: {
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.PASSWORD
     }
-  }
+  },
+  views: {
+    options: {
+      extension: 'njk'
+    }
+  },
+  send: true,
+  preview: false
 });
 
 
@@ -94,9 +85,7 @@ router.post('/email',
       res.render('email/index', pageObject);
 
     } else {
-
       res.redirect('/email/get-updated');
-
     }
 
 });
@@ -140,19 +129,50 @@ router.post('/email/get-updated',
 
     } else {
 
-      // Send email
-      email.send({
-        template: templateSubscribed,
-        message: {
-          from: 'gov.uk.email@notifications.service.gov.uk',
-          to: 'gov.uk.doubleoptin@gmail.com'
-        }
-      })
-      .catch(console.error);
+      if (req.session.data['confirm'] != 1) {
+
+        // Store in a session (send email once)
+        req.session.data['confirm'] = 1;
+
+        // Send email script
+        email.send({
+          template: templateConfirm,
+          message: {
+            to: 'gov.uk.doubleoptin@gmail.com'
+          }
+        });
+
+      }
 
       res.redirect('/email/check-email');
 
     }
+
+});
+
+
+
+// You’ve subscribed
+router.get('/email/subscribed/:id', function(req, res) {
+
+  var id = req.params.id;
+
+  if (id === '1' && req.session.data['subscribed'] != 1) {
+
+    // Store in a session (send email once)
+    req.session.data['subscribed'] = 1;
+
+    // Send email script
+    email.send({
+      template: templateSubscribed,
+      message: {
+        to: 'gov.uk.doubleoptin@gmail.com'
+      }
+    });
+
+  }
+
+  res.render('email/subscribed');
 
 });
 
