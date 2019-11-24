@@ -10,10 +10,15 @@ const path = require('path');
 // NPM dependencies
 const express    = require('express');
 const router     = express.Router();
+const dotenv     = require('dotenv');
 const nodemailer = require('nodemailer');
 const Email      = require('email-templates');
 
 const { check, validationResult } = require('express-validator');
+
+
+// Run before other code to make sure variables from .env are available
+dotenv.config();
 
 
 // Email templates
