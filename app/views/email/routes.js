@@ -154,7 +154,6 @@ router.post('/email/get-updated',
 });
 
 
-
 // You’ve subscribed
 router.get('/email/subscribed/:id', function(req, res) {
 
@@ -176,6 +175,17 @@ router.get('/email/subscribed/:id', function(req, res) {
   }
 
   res.render('email/subscribed');
+
+});
+
+
+// Email link expired
+router.get('/email/email-link-expired', function(req, res) {
+
+  // Kill session data
+  req.session.destroy();
+
+  res.render('email/email-link-expired');
 
 });
 
