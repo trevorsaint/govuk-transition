@@ -16,14 +16,17 @@ const { check, validationResult } = require('express-validator');
 dotenv.config();
 
 
-// Email template
+// Email templates
 const templateConfirm = path.join(__dirname, '../templates/confirm/');
 const templateSubscribed = path.join(__dirname, '../templates/subscribed/');
 
 
 const email = new Email({
   message: {
-    from: 'gov.uk.doubleoptin@gmail.com'
+    from: 'gov.uk.email@notifications.service.gov.uk'
+  },
+  locals: {
+    name: 'GOV.UK Email'
   },
   transport: {
     host: 'smtp.gmail.com',
