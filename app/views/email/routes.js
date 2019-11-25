@@ -141,7 +141,8 @@ router.post('/email/get-updated',
         email.send({
           template: templateConfirm,
           message: {
-            to: 'gov.uk.doubleoptin@gmail.com'
+            // to: 'gov.uk.doubleoptin@gmail.com'
+            to: req.session.data['your-email']
           }
         });
 
@@ -168,7 +169,8 @@ router.get('/email/subscribed/:id', function(req, res) {
     email.send({
       template: templateSubscribed,
       message: {
-        to: 'gov.uk.doubleoptin@gmail.com'
+        // to: 'gov.uk.doubleoptin@gmail.com'
+        to: req.session.data['your-email']
       }
     });
 
