@@ -23,10 +23,7 @@ const templateSubscribed = path.join(__dirname, '../templates/subscribed/');
 
 const email = new Email({
   message: {
-    from: 'gov.uk.email@notifications.service.gov.uk'
-  },
-  locals: {
-    name: 'GOV.UK Email'
+    from: 'GOV.UK Email <gov.uk.doubleoptin@gmail.com>'
   },
   transport: {
     host: 'smtp.gmail.com',
@@ -141,7 +138,6 @@ router.post('/email/get-updated',
         email.send({
           template: templateConfirm,
           message: {
-            // to: 'gov.uk.doubleoptin@gmail.com'
             to: req.session.data['your-email']
           }
         });
@@ -169,7 +165,6 @@ router.get('/email/subscribed/:id', function(req, res) {
     email.send({
       template: templateSubscribed,
       message: {
-        // to: 'gov.uk.doubleoptin@gmail.com'
         to: req.session.data['your-email']
       }
     });
