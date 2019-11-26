@@ -22,7 +22,7 @@
 
       <h1 class="govuk-heading-xl">Change your email address</h1>
 
-      <p>Your existing email address is: <span class="govuk-body govuk-!-font-weight-bold">trevor.saint@digital.cabinet-office.gov.uk</span></p>
+      <p>Your existing email address is: <span class="govuk-body govuk-!-font-weight-bold">{{ data["your-email"] if data["your-email"] else "trevor.saint@digital.cabinet-office.gov.uk" }}</span></p>
 
       <form method="post">
 
