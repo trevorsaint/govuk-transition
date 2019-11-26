@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+
+  {% if errors %}
+    Error: Get email updates - GOV.UK
+  {% else %}
+    Get email updates - GOV.UK
+  {% endif %}
+
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/email"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if errors %}
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+
+        <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+
+        <div class="govuk-error-summary__body">
+
+          <ul class="govuk-list govuk-error-summary__list">
+            <li><a href="#your-email-error">{{summaryError}}</a></li>
+          </ul>
+
+        </div>
+
+      </div>
+      {% endif %}
+
+      <h1 class="govuk-heading-xl">Get email updates</h1>
+
+      <p>You’ll get updates when we make changes to, or add information about: <br> <span class="govuk-body govuk-!-font-weight-bold">MOT and vehicle tests</span>.</p>
+
+      <p class="govuk-!-margin-bottom-2">You can:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>decide how often you are sent emails</li>
+        <li>unsubscribe at any time</li>
+      </ul>
+
+      <form method="post" novalidate="true">
+
+        {{ govukInput({
+          label: {
+            text: "Your email",
+            classes: "govuk-!-font-weight-bold"
+          },
+          id: "your-email",
+          name: "your-email",
+          type: "email",
+          attributes: {
+            autocomplete: "off",
+            spellcheck: "false"
+          },
+          value: data["your-email"],
+          errorMessage: inlineError
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      <p>Find out <a class="govuk-link govuk-link--no-visited-state" href="https://www.gov.uk/help/privacy-notice">how we use and protect your data</a>.</p>
+
+    </div>
+
+  </div>
+
+{% endblock %}

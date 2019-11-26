@@ -12,10 +12,8 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/task-list";
 @import "patterns/related-items";
 
-// Components that aren’t in Frontend
-@import "components/cookie-banner";
-
 // Prototype specific
 @import "settings/all";
 @import "tools/all";
 @import "core/all";
+@import "components/all";

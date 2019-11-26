@@ -1,0 +1,14 @@
+.govuk-list--topic .govuk-list__item {
+  margin-bottom: govuk-spacing(2);
+}
+
+.govuk-topics__item {
+  @include govuk-responsive-padding(4, "bottom");
+  @include govuk-responsive-padding(4, "top");
+}
+
+.govuk-link--no-underline {
+  text-decoration: none;
+}
+
+

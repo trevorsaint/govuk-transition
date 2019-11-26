@@ -3,10 +3,10 @@ const path = require('path');
 
 
 // NPM dependencies
-const express    = require('express');
-const router     = express.Router();
-const dotenv     = require('dotenv');
-const Email      = require('email-templates');
+const express = require('express');
+const router  = express.Router();
+const dotenv  = require('dotenv');
+const Email   = require('email-templates');
 
 
 const { check, validationResult } = require('express-validator');
@@ -45,7 +45,7 @@ const email = new Email({
 
 
 // Get email updates
-router.post('/email',
+router.post('/email/get-email-updates',
 
   [
     check('your-email')
@@ -82,10 +82,12 @@ router.post('/email',
         }
       }
 
-      res.render('email/index', pageObject);
+      res.render('email/get-email-updates', pageObject);
 
     } else {
+
       res.redirect('/email/get-updated');
+
     }
 
 });

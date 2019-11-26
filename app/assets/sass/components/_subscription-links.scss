@@ -1,0 +1,46 @@
+.subscription-links {
+  @include govuk-text-colour;
+  @include govuk-font(19, $weight: bold);
+
+  .subscription-links__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .subscription-links__list-item {
+    display: inline-block;
+    margin-right: govuk-spacing(4);
+    margin-bottom: govuk-spacing(3);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .subscription-links__link {
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-position: 0 20%;
+
+    @include govuk-media-query($from: tablet) {
+      background-position: 0 35%;
+    }
+
+  }
+
+}
+
+.subscription-links__icon {
+  margin-right: .1em;
+  position: relative;
+  top: 1px;
+}
+
+.subscription-links__list-item--small {
+
+  .subscription-links__icon {
+    transform-origin: bottom left;
+  }
+
+}
