@@ -40,12 +40,12 @@ const email = new Email({
     }
   },
   send: true,
-  preview: false
+  preview: true
 });
 
 
-// Get email updates
-router.post('/email/get-email-updates',
+// Email updates
+router.post('/email/email-updates',
 
   [
     check('your-email')
@@ -82,11 +82,11 @@ router.post('/email/get-email-updates',
         }
       }
 
-      res.render('email/get-email-updates', pageObject);
+      res.render('email/email-updates', pageObject);
 
     } else {
 
-      res.redirect('/email/get-updated');
+      res.redirect('/email/email-frequency');
 
     }
 
@@ -94,10 +94,10 @@ router.post('/email/get-email-updates',
 
 
 // When do you want to be updated about changes?
-router.post('/email/get-updated',
+router.post('/email/email-frequency',
 
   [
-    check('get-updated')
+    check('email-frequency')
       .not()
       .isEmpty()
       .withMessage('Choose when you want to receive updates'),
@@ -127,7 +127,7 @@ router.post('/email/get-updated',
         }
       }
 
-      res.render('email/get-updated', pageObject);
+      res.render('email/email-frequency', pageObject);
 
     } else {
 

@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+
+  {% if errors %}
+    Error: Enter your email address - GOV.UK
+  {% else %}
+    Enter your email address - GOV.UK
+  {% endif %}
+
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/email/mvp/email-frequency"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if errors %}
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+
+        <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+
+        <div class="govuk-error-summary__body">
+
+          <ul class="govuk-list govuk-error-summary__list">
+            <li><a href="#your-email-error">{{summaryError}}</a></li>
+          </ul>
+
+        </div>
+
+      </div>
+      {% endif %}
+
+      <h1 class="govuk-heading-xl">Enter your email address</h1>
+
+      <p>You’re subscribing to get email notifications about: <br> <span class="govuk-body govuk-!-font-weight-bold">MOT and vehicle tests</span>.</p>
+
+      <p class="govuk-!-margin-bottom-4">You’ll get an email every time a page is added or changed.</p>
+
+      <form method="post" novalidate="true">
+
+        {{ govukInput({
+          label: {
+            text: "What’s your email address?"
+          },
+          id: "your-email",
+          name: "your-email",
+          type: "email",
+          attributes: {
+            autocomplete: "off",
+            spellcheck: "false"
+          },
+          value: data["your-email"],
+          errorMessage: inlineError
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      <p>We won’t share your email address with anyone. Read our <a class="govuk-link govuk-link--no-visited-state" href="https://www.gov.uk/help/privacy-notice" target="_blank">privacy policy (opens in a new tab)</a>.</p>
+
+    </div>
+
+  </div>
+
+{% endblock %}
