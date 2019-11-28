@@ -19,6 +19,7 @@ dotenv.config();
 // Email templates
 const templateConfirm = path.join(__dirname, '../../templates/mvp/confirm/');
 const templateSubscribed = path.join(__dirname, '../../templates/mvp/subscribed/');
+const templateAuthenticate = path.join(__dirname, '../../templates/mvp/authenticate/');
 
 
 const email = new Email({
@@ -40,7 +41,7 @@ const email = new Email({
     }
   },
   send: true,
-  preview: true
+  preview: false
 });
 
 
@@ -221,14 +222,14 @@ router.post('/email/mvp/authenticate',
 
     } else {
 
-      if (req.session.data['confirm'] != 1) {
+      if (req.session.data['authenticate'] != 1) {
 
         // Store in a session (send email once)
-        req.session.data['confirm'] = 1;
+        req.session.data['authenticate'] = 1;
 
         // Send email script
         email.send({
-          template: templateConfirm,
+          template: templateAuthenticate,
           message: {
             to: req.session.data['your-email']
           }
