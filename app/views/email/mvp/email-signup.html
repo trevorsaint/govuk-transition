@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Email alert subscription for MOT and vehicle tests: Get and check an MOT - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "MOT and vehicle tests",
+      href: "/email/mvp"
+    },
+    {
+      text: "Get and check an MOT",
+      href: "/email/mvp/email-signup"
+    }
+  ]
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">Email alert subscription</span>
+        Get and check an MOT
+      </h1>
+
+      <p>You’ll get an email each time content is published or updated in this topic.</p>
+
+      {{ govukButton({
+        classes: "govuk-!-margin-top-3",
+        href: "/email/mvp/email-frequency",
+        text: "Create subscription"
+      }) }}
+
+    </div>
+
+  </div>
+
+{% endblock %}

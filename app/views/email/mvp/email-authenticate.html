@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Manage your subscriptions - GOV.UK
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Manage your subscriptions</h1>
+
+      <p>We’ve sent an email to <span class="govuk-body govuk-!-font-weight-bold">{{ data["your-email"] if data["your-email"] else "joe.bloggs@digital.cabinet-office.gov.uk" | safe }}</span></p>
+      <p>Check your inbox and click on the link to confirm your email address.</p>
+
+    </div>
+
+  </div>
+
+{% endblock %}
