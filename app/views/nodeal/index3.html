@@ -2,11 +2,19 @@
 
 
 {% block pageTitle %}
-  Get and check an MOT - GOV.UK
+  Export fish after a no-deal Brexit - GOV.UK
 {% endblock %}
 
 
 {% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype",
+    classes: "app-tag--prototype"
+  },
+  html: 'This is a prototype – your <a class="govuk-link govuk-link--no-visited-state" href="#">feedback</a> will help us to improve it.'
+}) }}
+
 {{ govukBreadcrumbs({
   items: [
     {
@@ -72,9 +80,10 @@
 
 
   <div class="app-c-notice" aria-label="Notice" role="region">
-    <h2 class="app-c-notice__title">This guidance explains what to do if there is no new agreement with the EU</h2>
-    <p class="govuk-body">You do not need to follow this guidance now. These rules may apply after the transition period. Guidance will be updated based on negotiations with the EU.</p>
-    <p class="govuk-body govuk-!-margin-bottom-0">Find out the currewnt guidance: <a class="govuk-link govuk-link--no-visited-state" href="#">Apply for an otter license</a></p>
+    <h2 class="app-c-notice__title">The UK has left the EU with a deal</h2>
+    <p class="govuk-body">The UK is negotiating new arrangements with the EU.</p>
+    <p class="govuk-body">If new arrangements are not agreed then this guidance will apply from 1 January 2021.</p>
+    <p class="govuk-body govuk-!-margin-bottom-0">Current guidance: <a class="govuk-link govuk-link--no-visited-state" href="#">Apply for an otter license</a></p>
   </div>
 
 

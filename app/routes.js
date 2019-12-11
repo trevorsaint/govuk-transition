@@ -16,5 +16,13 @@ router.get('/nodeal/2', (req, res) => {
   res.render('nodeal/index2');
 });
 
+router.get('/nodeal/3', (req, res) => {
+  res.render('nodeal/index3');
+});
+
+router.get('/nodeal/4', (req, res) => {
+  res.render('nodeal/index4');
+});
+
 
 module.exports = router;
