@@ -8,6 +8,10 @@ router.get('/', (req, res) => {
 
 
 // Move to a different routes folder
+router.get('/nodeal/existing-withdrawn', (req, res) => {
+  res.render('nodeal/existing-withdrawn');
+});
+
 router.get('/nodeal/1', (req, res) => {
   res.render('nodeal/index');
 });
