@@ -8,7 +8,7 @@
     @include govuk-responsive-margin(8, "bottom");
 
     clear: both;
-    border: 2px solid govuk-colour("blue");
+    border: 5px solid govuk-colour("blue");
 
     .govuk-govspeak {
       p:last-child {
@@ -23,8 +23,8 @@
 
    .app-c-notice__title {
     @include govuk-font(24, $weight: bold);
-    margin-top: 0;
     @include govuk-responsive-margin(4, "bottom");
+    margin-top: 0;
 
     &:last-child {
       margin-bottom: 0;
