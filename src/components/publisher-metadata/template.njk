@@ -34,7 +34,7 @@
             {%- for i in range(0, itemCount) %}
               {%- set item = section.items[i] -%}
               {% if item.href %}
-                <a href="{{ item.href }}"{% for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+                <a class="govuk-link{{- ' ' + item.classes if item.classes }}" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
                   {{- item.heading.html | safe if item.heading.html else item.heading.text -}}
                 </a>
               {% else %}
@@ -43,14 +43,14 @@
             {% endfor -%}
             {%- if section.limit %}
               <div class="app-metadata__toggle-wrap">
-                <a aria-controls="{{ section.limit['aria-controls'] }}" aria-expanded="{{ section.limit['aria-expanded'] }}" class="app-c-publisher-metadata__definition-link" data-controls="{{ section.limit['data-controls'] }}" data-expanded="{{ section.limit['data-expanded'] }}" data-toggled-text="{{ section.limit['data-toggled-text'] }}" href="#" role="button">
+                <a class="govuk-link" aria-controls="{{ section.limit['aria-controls'] }}" aria-expanded="{{ section.limit['aria-expanded'] }}" class="app-c-publisher-metadata__definition-link" data-controls="{{ section.limit['data-controls'] }}" data-expanded="{{ section.limit['data-expanded'] }}" data-toggled-text="{{ section.limit['data-toggled-text'] }}" href="#" role="button">
                   {{- '+' + (section.items.length - section.limit.count) + ' more' -}}
                 </a>
               </div>
               <span id="{{ section.limit['aria-controls'] }}" class="app-metadata__toggle-items js-hidden" aria-live="polite" role="region">
                 {% for i in range(section.limit.count, section.items.length) -%}
                   {%- set item = section.items[i] -%}
-                  <a href="{{ item.href }}"{% for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+                  <a class="govuk-link{{- ' ' + item.classes if item.classes }}" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
                     {{- item.heading.html | safe if item.heading.html else item.heading.text -}}
                   </a>{%- if loop.index == (loop.length-1) %} {{ section.itemSeparator if section.itemSeparator else 'and' }} {% elif loop.index < loop.length %}, {% endif -%}
                 {% endfor -%}
@@ -61,5 +61,5 @@
       </dl>
     </div>
   {% endif -%}
-  
+
 </div>

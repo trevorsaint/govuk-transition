@@ -54,29 +54,40 @@
   <hr class="govuk-section-break govuk-section-break--visible">
 
 
-  <div class="govuk-!-margin-bottom-8">
-
-    <div class="app-c-publisher-metadata">
-
-      <div class="app-c-published-dates">
-        Published <time datetime="2019-02-04">4 February 2019</time><br>
-        Last updated <time datetime="2019-10-23">23 October 2019</time> — <a href="#history" class="app-c-published-dates__history-link govuk-link govuk-link--no-visited-state">see all updates</a>
-      </div>
-
-      <div class="app-c-publisher-metadata__other">
-        <dl>
-          <dt class="app-c-publisher-metadata__term">From:</dt>
-          <dd class="app-c-publisher-metadata__definition">
-            <span class="app-c-publisher-metadata__definition-sentence">
-              <a class="govuk-link govuk-link--no-visited-state" href="/government/organisations/marine-management-organisation">Marine Management Organisation</a> and <a class="govuk-link govuk-link--no-visited-state" href="/government/organisations/department-for-environment-food-rural-affairs">Department for Environment, Food &amp; Rural Affairs</a>
-            </span>
-          </dd>
-        </dl>
-      </div>
-
-    </div>
-
-  </div>
+  {{ appPublisherMetadata({
+    classes: "govuk-!-margin-bottom-8",
+    published: {
+      text: "Published",
+      timestamp: "2019-02-04T15:42:37.000+00:00"
+    },
+    lastUpdated: {
+      text: "Last updated",
+      timestamp: "2019-10-23T12:15:42.000+00:00"
+    },
+    linkToHistory: {
+      href: "#",
+      text: "see all updates",
+      classes: "govuk-link--no-visited-state"
+    },
+    sections: [{
+      heading: {
+        text: "From"
+      },
+      items: [{
+        heading: {
+          text: "Marine Management Organisation"
+        },
+        href: "#",
+        classes: "govuk-link--no-visited-state"
+      }, {
+        heading: {
+          text: "Department for Environment, Food & Rural Affairs"
+        },
+        href: "#",
+        classes: "govuk-link--no-visited-state"
+      }]
+    }]
+  }) }}
 
 
   <div class="app-c-notice" aria-label="Notice" role="region">
@@ -95,17 +106,39 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-      <nav class="app-contents-list  app-contents-list--no-underline  govuk-!-margin-bottom-8" role="navigation">
-        <h2 class="app-contents-list__title">Contents</h2>
-        <ol class="app-contents-list__list">
-          <li class="app-contents-list__list-item app-contents-list__list-item--dashed"><a class="app-contents-list__link govuk-link govuk-link--no-visited-state" href="#">Stay up to date</a></li>
-          <li class="app-contents-list__list-item app-contents-list__list-item--dashed"><a class="app-contents-list__link govuk-link govuk-link--no-visited-state" href="#">Customs requirements</a></li>
-          <li class="app-contents-list__list-item app-contents-list__list-item--dashed"><a class="app-contents-list__link govuk-link govuk-link--no-visited-state" href="#">Get an export health certificate</a></li>
-          <li class="app-contents-list__list-item app-contents-list__list-item--dashed"><a class="app-contents-list__link govuk-link govuk-link--no-visited-state" href="#">Send validated catch certificate to the importer</a></li>
-          <li class="app-contents-list__list-item app-contents-list__list-item--dashed"><a class="app-contents-list__link govuk-link govuk-link--no-visited-state" href="#">Composite products</a></li>
-          <li class="app-contents-list__list-item app-contents-list__list-item--dashed"><a class="app-contents-list__link govuk-link govuk-link--no-visited-state" href="#">Direct landing documents</a></li>
-        </ol>
-      </nav>
+      {{ appContentsList({
+        heading: {
+          text: "Contents"
+        },
+        classes: 'app-contents-list--no-underline govuk-!-margin-bottom-8',
+        items: [
+          {
+            text: "Stay up to date",
+            href: "#stay-up-to-date",
+            classes: "govuk-link--no-visited-state"
+          }, {
+            text: "Customs requirements",
+            href: "#customs-requirements",
+            classes: "govuk-link--no-visited-state"
+          }, {
+            text: "Get an export health certificate",
+            href: "#get-an-export-health-certificate",
+            classes: "govuk-link--no-visited-state"
+          }, {
+            text: "Send validated catch certificate to the importer",
+            href: "#send-validated-catch-certificate-to-the-importer",
+            classes: "govuk-link--no-visited-state"
+          }, {
+            text: "Composite products",
+            href: "#composite-products",
+            classes: "govuk-link--no-visited-state"
+          }, {
+            text: "Direct landing documents",
+            href: "#direct-landing-documents",
+            classes: "govuk-link--no-visited-state"
+          }
+        ]
+      }) }}
 
       <div class="app-informed">
         <h2 class="govuk-heading-m">Stay up to date</h2>
@@ -117,8 +150,8 @@
       <p>To export fish to the EU after a no-deal Brexit you’ll need to follow the same rules that are currently in place for exports of fish to some non-EU countries. You’ll need to create:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>an <a href="#">export health certificate</a>, except for direct landings of fresh fish in EU ports from UK-flagged fishing vessels</li>
-        <li>a <a href="#">catch certificate</a> - you need to validate this and send it to your importer</li>
+        <li>an <a class="govuk-link govuk-link--no-visited-state" href="#">export health certificate</a>, except for direct landings of fresh fish in EU ports from UK-flagged fishing vessels</li>
+        <li>a <a class="govuk-link govuk-link--no-visited-state" href="#">catch certificate</a> - you need to validate this and send it to your importer</li>
       </ul>
 
       <p>You’ll need to follow customs and border inspection requirements. You may also need:</p>
@@ -265,7 +298,24 @@
 
       <p>Check with the <abbr title="North East Atlantic Fisheries Commission">NEAFC</abbr> to find out how much notice you need to give. This will vary depending on the country you’re exporting to and how your product is presented.</p>
 
-      <div class="app-c-published-dates app-c-published-dates--history govuk-!-margin-top-8">Published <time datetime="2019-02-04">4 February 2019</time><br>Last updated 23 October 2019 <a class="govuk-link govuk-link--no-visited-state" href="#">+&nbsp;show all updates</a></div>
+      <hr class="govuk-section-break govuk-section-break--visible">
+
+      {{ appPublisherMetadata({
+        classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-8",
+        published: {
+          text: "Published",
+          timestamp: "2019-02-04T15:42:37.000+00:00"
+        },
+        lastUpdated: {
+          text: "Last updated",
+          timestamp: "2019-10-23T12:15:42.000+00:00"
+        },
+        linkToHistory: {
+          href: "#",
+          text: "see all updates",
+          classes: "govuk-link--no-visited-state"
+        }
+      }) }}
 
     </div>
 
@@ -284,7 +334,7 @@
 
           <nav role="navigation" class="app-related-navigation__nav-section" aria-labelledby="related-nav-related_items-1499c540">
             <ul class="app-related-navigation__link-list">
-              <li class="app-related-navigation__link"><a class="app-related-navigation__section-link app-related-navigation__section-link--sidebar  app-related-navigation__section-link--other" data-track-category="relatedLinkClicked" data-track-action="1.1 Related content" data-track-label="/find-eu-exit-guidance-business" data-track-options="{&quot;dimension28&quot;:&quot;1&quot;,&quot;dimension29&quot;:&quot;Find Brexit guidance for your business&quot;}" href="/find-eu-exit-guidance-business">Find Brexit guidance for your business</a></li>
+              <li class="app-related-navigation__link"><a class="app-related-navigation__section-link app-related-navigation__section-link--sidebar  app-related-navigation__section-link--other" href="/find-eu-exit-guidance-business">Find Brexit guidance for your business</a></li>
             </ul>
           </nav>
 

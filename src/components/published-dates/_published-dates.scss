@@ -16,24 +16,18 @@
   .app-c-published-dates__term {
     margin-top: .5em;
     line-height: 1.4;
-
-    @include govuk-media-query($from: tablet) {
-      box-sizing: border-box;
-      float: left;
-      clear: left;
-      padding-right: govuk-spacing(1);
-      margin-top: 0;
-    }
+    box-sizing: border-box;
+    float: left;
+    clear: left;
+    padding-right: govuk-spacing(1);
+    margin-top: 0;
   }
 
   .app-c-published-dates__definition {
     margin: 0;
     line-height: 1.4;
-
-    @include govuk-media-query($from: tablet) {
-      float: left;
-      padding-right: govuk-spacing(1);
-    }
+    float: left;
+    padding-right: govuk-spacing(1);
   }
 
   .app-c-published-dates__toggle {
