@@ -1,0 +1,362 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Export fish after a no-deal Brexit - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype",
+    classes: "app-tag--prototype"
+  },
+  html: 'This is a prototype – your <a class="govuk-link govuk-link--no-visited-state" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/"
+    },
+    {
+      text: "Find Brexit guidance for your business",
+      href: "/"
+    }
+  ]
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-!-margin-bottom-8">
+        <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Guidance</span>
+          Export fish after a no-deal Brexit
+        </h1>
+      </div>
+
+      <p class="govuk-body-l govuk-!-margin-bottom-8">How to export fish for human consumption after a no-deal Brexit, what documents you may need and customs rules to follow.</p>
+
+    </div>
+
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--visible">
+
+
+  {{ appPublisherMetadata({
+    classes: "govuk-!-margin-bottom-8",
+    published: {
+      text: "Published",
+      timestamp: "2019-02-04T15:42:37.000+00:00"
+    },
+    lastUpdated: {
+      text: "Last updated",
+      timestamp: "2019-10-23T12:15:42.000+00:00"
+    },
+    linkToHistory: {
+      href: "#",
+      text: "see all updates",
+      classes: "govuk-link--no-visited-state"
+    },
+    sections: [{
+      heading: {
+        text: "From"
+      },
+      items: [{
+        heading: {
+          text: "Marine Management Organisation"
+        },
+        href: "#",
+        classes: "govuk-link--no-visited-state"
+      }, {
+        heading: {
+          text: "Department for Environment, Food & Rural Affairs"
+        },
+        href: "#",
+        classes: "govuk-link--no-visited-state"
+      }]
+    }]
+  }) }}
+
+
+  <div class="app-c-notice" aria-label="Notice" role="region">
+    <h2 class="app-c-notice__title">This publication was withdrawn on 1 February 2020</h2>
+    <p class="govuk-body">The UK has left the EU with a deal and is negotiating new arrangements with the EU.</p>
+    <p class="govuk-body">If new arrangements are not agreed then this guidance will apply from 1 January 2021.<p>
+    <p class="govuk-body govuk-!-margin-bottom-1">Current guidance:</p>
+    <ul class="govuk-list govuk-!-margin-bottom-0">
+      <li><a class="govuk-link govuk-link--no-visited-state" href="#">Apply for an otter license</a></li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="#">Register your net</a></li>
+    </ul>
+  </div>
+
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ appContentsList({
+        heading: {
+          text: "Contents"
+        },
+        classes: 'app-contents-list--no-underline govuk-!-margin-bottom-8',
+        items: [
+          {
+            text: "Stay up to date",
+            href: "#stay-up-to-date",
+            classes: "govuk-link--no-visited-state"
+          }, {
+            text: "Customs requirements",
+            href: "#customs-requirements",
+            classes: "govuk-link--no-visited-state"
+          }, {
+            text: "Get an export health certificate",
+            href: "#get-an-export-health-certificate",
+            classes: "govuk-link--no-visited-state"
+          }, {
+            text: "Send validated catch certificate to the importer",
+            href: "#send-validated-catch-certificate-to-the-importer",
+            classes: "govuk-link--no-visited-state"
+          }, {
+            text: "Composite products",
+            href: "#composite-products",
+            classes: "govuk-link--no-visited-state"
+          }, {
+            text: "Direct landing documents",
+            href: "#direct-landing-documents",
+            classes: "govuk-link--no-visited-state"
+          }
+        ]
+      }) }}
+
+      <div class="app-informed">
+        <h2 class="govuk-heading-m">Stay up to date</h2>
+        <p>The UK is leaving the EU. This page tells you how to prepare for Brexit and will be updated if anything changes.</p>
+        <p><a class="govuk-link govuk-link--no-visited-state" href="#">Sign up for email alerts</a> to get the latest information.</p>
+        <p><a class="govuk-link govuk-link--no-visited-state" href="#">Sign up for Defra alerts</a> about Brexit and the fisheries and marine sector.</p>
+      </div>
+
+      <p>To export fish to the EU after a no-deal Brexit you’ll need to follow the same rules that are currently in place for exports of fish to some non-EU countries. You’ll need to create:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>an <a class="govuk-link govuk-link--no-visited-state" href="#">export health certificate</a>, except for direct landings of fresh fish in EU ports from UK-flagged fishing vessels</li>
+        <li>a <a class="govuk-link govuk-link--no-visited-state" href="#">catch certificate</a> - you need to validate this and send it to your importer</li>
+      </ul>
+
+      <p>You’ll need to follow customs and border inspection requirements. You may also need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>direct landing documents</li>
+        <li>a storage document</li>
+        <li>a processing statement</li>
+      </ul>
+
+      <p>If you’re exporting fish to the EU, you can view <a class="govuk-link govuk-link--no-visited-state" href="#">journey maps with the steps you need to take</a>.</p>
+
+      <h2 class="govuk-heading-m">Customs requirements</h2>
+
+      <p>You must comply with <a class="govuk-link govuk-link--no-visited-state" href="#">HMRC guidance on customs requirements</a> for exporting to the EU.</p>
+
+      <p>These rules will apply to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>exports to the EU of fish caught by a UK flagged fishing vessel</li>
+        <li>exports to the EU of fish imported from another country that have been stored or processed in the UK</li>
+        <li>direct landings in <a class="govuk-link govuk-link--no-visited-state" href="#">EU ports</a> by a UK flagged fishing vessel</li>
+      </ul>
+
+      <h3 class="govuk-heading-s">Send fish to an EU border inspection post</h3>
+
+      <p>You’ll need to send all consignments of fish and fishery products through an EU <a class="govuk-link govuk-link--no-visited-state" href="#">border inspection post (<abbr title="border inspection post">BIP</abbr>)</a> if the fish was both:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>caught by a UK flagged vessel</li>
+        <li>landed in the UK before being transported to the EU</li>
+      </ul>
+
+      <p>Your EU importer must notify the <abbr title="border inspection post">BIP</abbr> in advance of your arrival. Notification periods vary. Check with the <abbr title="border inspection post">BIP</abbr> for more information.</p>
+
+      <p>Fishery products entering the EU via Calais or Coquelles must travel to the <abbr title="border inspection post">BIP</abbr> at Boulogne-sur-Mer under a Common Transit Convention (CTC) declaration submitted up to 72 hours in advance of arrival. Lorries arriving in Calais or Coquelles will be directed to the green corridor to go to the Boulogne-sur-Mer <abbr title="border inspection post">BIP</abbr>, where checks will be carried out.</p>
+
+      <h2 class="govuk-heading-m">Get an export health certificate</h2>
+
+      <p>You’ll need an export health certificate (<abbr title="export health certificate">EHC</abbr>) for all exports of fish to the EU. <a class="govuk-link govuk-link--no-visited-state" href="#">Find out how to get an <abbr title="export health certificate">EHC</abbr></a>.</p>
+
+      <p>All exports of fishery products will need to be dispatched from an UK approved food establishment that has been listed by the EU. <a class="govuk-link govuk-link--no-visited-state" href="#">Find out how to become listed</a>.</p>
+
+      <h2 class="govuk-heading-m">Send validated catch certificate to the importer</h2>
+
+      <p>You must send the validated catch certificate to the importer so they can give them to the receiving country’s competent authority. You must do this for exports by:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>sea: 72 hours before landing</li>
+        <li>air and rail: 4 hours before arriving</li>
+        <li>road: 2 hours before arriving</li>
+      </ul>
+
+      <h3 class="govuk-heading-s">Storage document - for fish stored on the UK premises but not processed</h3>
+
+      <p>If you’re exporting to the EU fish sourced from another country that have been stored on the UK premises for 12 hours or longer, but not processed in any way, you’ll need to create a storage document.</p>
+
+      <p>You must keep a copy of the catch certificate from the original consignment with the storage document.</p>
+
+      <h3 class="govuk-heading-s">Processing statement - for fish processed in the UK</h3>
+
+      <p>If you’re exporting to the EU fish sourced from another country that has been processed in the UK, you’ll need to create a processing statement.</p>
+
+      <p>Include a copy of the catch certificate from the original consignment with the processing statement.</p>
+
+      <h3 class="govuk-heading-s">If you need help</h3>
+
+      <p>If you need help with general questions you can contact the fish exports helpline.</p>
+
+      <p><strong>The fish exports helpline</strong> <br>
+      Monday to Friday 9am to 5pm <br>
+      Telephone: 0330 159 1989 <br>
+      <a class="govuk-link govuk-link--no-visited-state" href="#">Find out about call charges</a></p>
+
+      <h2 class="govuk-heading-m">Composite products</h2>
+
+      <p>Products that contain no meat but contain 50% or more processed fishery product will need to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>enter via a <abbr title="border inspection post">BIP</abbr> and will be subject to veterinary checks</li>
+        <li>have an Export Health Certificate</li>
+      </ul>
+
+      <p>Composite products where the fish makes up more than 20% of the content or uses tariff code 1604 and 1605 will need to be accompanied by a catch certificate.</p>
+
+      <p>Read the <a class="govuk-link govuk-link--no-visited-state" href="#">Export composite food products to the EU in a no-deal Brexit</a> guide to find out the rules you’ll need to follow.</p>
+
+      <h2 class="govuk-heading-m">Direct landing documents</h2>
+
+      <p>To land your catch from your UK flagged fishing vessel directly in the EU you’ll need to land in a North East Atlantic Fisheries Commission (<abbr title="North East Atlantic Fisheries Commission">NEAFC</abbr>) <a class="govuk-link govuk-link--no-visited-state" href="#">designated EU port</a>.</p>
+
+      <p>Fishery enforcement officers may inspect your fish when you arrive. You’ll need to show them the catch certificate.</p>
+
+      <p>You’ll need to complete a:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>prior notification form</li>
+        <li>pre-landing declaration</li>
+      </ul>
+
+      <h3 class="govuk-heading-s">Prior notification form</h3>
+
+      <p>If you’re landing in an EU member state with</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link govuk-link--no-visited-state" href="#">exempt fisheries products only</a>, you need to fill in a <a class="govuk-link govuk-link--no-visited-state" href="#">prior notification for exempt fisheries product form</a></li>
+        <li>all other fisheries products, or a combination of exempt and non-exempt products, you need to complete this <a class="govuk-link govuk-link--no-visited-state" href="#">prior notification form</a></li>
+      </ul>
+
+      <p>Regardless of which form you fill in, you must email them to your destination’s <a class="govuk-link govuk-link--no-visited-state" href="#">designated EU port</a> before landing. You need to send it:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>for frozen fish, at least 72 hours before landing - you can fill in the prior notification form before 31 October 2019 for any exports planned from 31 October</li>
+        <li>for fresh fish, at least 4 hours before landing</li>
+      </ul>
+
+      <h3 class="govuk-heading-s">Pre-landing declaration</h3>
+
+      <p>You’ll need to fill in a <a class="govuk-link govuk-link--no-visited-state" href="#">pre-landing declaration</a> and email it to your destination’s <a class="govuk-link govuk-link--no-visited-state" href="#">designated EU port</a> 4 hours before landing.</p>
+
+      <p>You’ll need to give details of the:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>area fished</li>
+        <li>quantity of fish by species on board the vessel</li>
+      </ul>
+
+      <h3 class="govuk-heading-s">Special requirements for UK approved fishing vessels</h3>
+
+      <p>Local Authority approved freezer, reefer or factory vessels that land frozen or processed fish directly into the EU will also require:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a Captain’s Certificate signed by the Captain who is authorised by <abbr title="Animal and Plant Health Agency">APHA</abbr> (Animal and Plant Health Agency) or <abbr title="Department of Agriculture, Environment and Rural Affairs">DAERA</abbr> (Department of Agriculture, Environment and Rural Affairs)</li>
+        <li>the fish to be landed into a Border Inspection Post (<abbr title="border inspection post">BIP</abbr>) approved for the landed fishery product</li>
+      </ul>
+
+      <p>‘Processing’ includes activities such as wrapping, mincing, freezing and filleting.</p>
+
+      <p>Non-food approved registered vessels that land fresh fish directly into the EU at a <abbr title="North East Atlantic Fisheries Commission">NEAFC</abbr> designated port will not require an Export Health Certificate or need to pass through a <abbr title="border inspection post">BIP</abbr>. They will still be subject to any normal official controls within the port. ‘Fresh fish’ may have undergone primary production, which may include de-heading or gutting.</p>
+
+      <h3 class="govuk-heading-s">North East Atlantic Fisheries Commission (NEAFC) Port State Control forms</h3>
+
+      <p>You’ll have to <a class="govuk-link govuk-link--no-visited-state" href="#">register your fishing vessel</a> with <abbr title="North East Atlantic Fisheries Commission">NEAFC</abbr>. Once your vessel is registered, you’ll need to submit a <abbr title="North East Atlantic Fisheries Commission">NEAFC</abbr> Port State Control form (PSC1 or PSC2) before landing.</p>
+
+      <p>Check with the <abbr title="North East Atlantic Fisheries Commission">NEAFC</abbr> to find out how much notice you need to give. This will vary depending on the country you’re exporting to and how your product is presented.</p>
+
+      <hr class="govuk-section-break govuk-section-break--visible">
+
+      {{ appPublisherMetadata({
+        classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-8",
+        published: {
+          text: "Published",
+          timestamp: "2019-02-04T15:42:37.000+00:00"
+        },
+        lastUpdated: {
+          text: "Last updated",
+          timestamp: "2019-10-23T12:15:42.000+00:00"
+        },
+        linkToHistory: {
+          href: "#",
+          text: "see all updates",
+          classes: "govuk-link--no-visited-state"
+        }
+      }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <div class="app-related-navigation">
+
+        <div class="govuk-!-margin-bottom-6">
+          <h2 class="app-related-navigation__main-heading">Brexit</h2>
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Check what you need to do</a>
+        </div>
+
+        <div class="app-related-navigation">
+
+          <h2 class="app-related-navigation__main-heading">Related content</h2>
+
+          <nav role="navigation" class="app-related-navigation__nav-section" aria-labelledby="related-nav-related_items-1499c540">
+            <ul class="app-related-navigation__link-list">
+              <li class="app-related-navigation__link"><a class="app-related-navigation__section-link app-related-navigation__section-link--sidebar  app-related-navigation__section-link--other" href="/find-eu-exit-guidance-business">Find Brexit guidance for your business</a></li>
+            </ul>
+          </nav>
+
+          <nav role="navigation" class="app-related-navigation__nav-section">
+            <h3 class="app-related-navigation__sub-heading app-related-navigation__sub-heading--sidebar">Detailed guidance</h3>
+            <ul class="app-related-navigation__link-list">
+              <li class="app-related-navigation__link"><a class="app-related-navigation__section-link app-related-navigation__section-link--sidebar govuk-link govuk-link--no-visited-state" href="#">Catch certificates for non-EU imports and exports of fish</a></li>
+              <li class="app-related-navigation__link"><a class="app-related-navigation__section-link app-related-navigation__section-link--sidebar govuk-link govuk-link--no-visited-state" href="#">Create a UK processing statement</a></li>
+              <li class="app-related-navigation__link"><a class="app-related-navigation__section-link app-related-navigation__section-link--sidebar govuk-link govuk-link--no-visited-state" href="#">Create a UK storage document</a></li>
+              <li class="app-related-navigation__link"><a class="app-related-navigation__section-link app-related-navigation__section-link--sidebar govuk-link govuk-link--no-visited-state" href="#">Create a UK catch certificate</a></li>
+              <li class="app-related-navigation__link"><a class="app-related-navigation__section-link app-related-navigation__section-link--sidebar app-related-navigation__section-link--inline govuk-link govuk-link--no-visited-state" href="#">Importing animals, animal products and high-risk food and feed not of animal origin if there’s a no-deal Brexit</a></li>
+              <li class="app-related-navigation__link toggle-wrap"><a href="#" class="app-related-navigation__toggle govuk-link govuk-link--no-visited-state" role="button">+ 4 more</a></li>
+              <li class="app-related-navigation__link app-related-navigation__link--truncated-links"><span id="toggle_related_guides" class="app-related-navigation__toggle-more js-hidden govuk-link govuk-link--no-visited-state"><a class="app-related-navigation__section-link app-related-navigation__section-link--sidebar app-related-navigation__section-link--inline govuk-link govuk-link--no-visited-state" href="#">Import fish after a no-deal Brexit</a></span></li>
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}

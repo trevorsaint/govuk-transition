@@ -81,7 +81,37 @@
 {% block header %}
   {% include "includes/cookie-banner.html" %}
   {{ govukHeader({
-    homepageUrl: "/"
+    homepageUrl: "/",
+    navigation: [
+    {
+      href: "1",
+      text: "Departments"
+    },
+    {
+      href: "2",
+      text: "Worldwide"
+    },
+    {
+      href: "3",
+      text: "How government works"
+    },
+    {
+      href: "4",
+      text: "Get involved"
+    },
+    {
+      href: "4",
+      text: "Consultants"
+    },
+    {
+      href: "4",
+      text: "Statistics"
+    },
+    {
+      href: "4",
+      text: "News and communications"
+    }
+  ]
   }) }}
 {% endblock %}
 
