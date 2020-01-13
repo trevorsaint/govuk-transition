@@ -90,3 +90,10 @@
       vertical-align: top;
     }
   }
+
+
+// Added to prevent underline on links (temp)
+.app-contents-list__link:active,
+.app-contents-list__link:focus {
+  text-decoration: none !important;
+}
