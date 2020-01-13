@@ -10,6 +10,10 @@ router.get('/existing-withdrawn', (req, res) => {
   res.render('existing-withdrawn');
 });
 
+router.get('/google-search-results', (req, res) => {
+  res.render('google-search-results');
+});
+
 router.get('/options/1', (req, res) => {
   res.render('1');
 });
