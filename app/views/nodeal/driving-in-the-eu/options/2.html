@@ -1,0 +1,280 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Driving abroad - GOV.UK
+{% endblock %}
+
+
+{% block pageScripts %}
+<script src="/public/javascripts/step-by-step-navigation.js"></script>
+<script>
+  var $element1 = $('#step-by-step-navigation');
+  var stepByStepNavigation = new GOVUK.Modules.StepByStepNavigation();
+  stepByStepNavigation.start($element1);
+</script>
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype",
+      classes: "app-tag--prototype"
+    },
+    html: 'This is a prototype – your <a class="govuk-link govuk-link--no-visited-state" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ appStepByStepNavigationHeader({
+    heading: {
+      text: "Drive abroad: step by step",
+      href: "#"
+    }
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-!-margin-bottom-8">
+        <h1 class="govuk-heading-xl">Driving abroad</h1>
+      </div>
+
+      {{ appContentsList({
+        heading: {
+          text: "Contents"
+        },
+        classes: 'app-contents-list--no-underline govuk-!-margin-bottom-8',
+        items: [
+          {
+            text: "Driving abroad on holiday",
+            href: "#",
+            classes: "govuk-link govuk-link--no-visited-state",
+            active: true
+          }, {
+            text: "Check if you need an international driving permit (IDP)",
+            href: "#",
+            classes: "govuk-link govuk-link--no-visited-state"
+          }, {
+            text: "Get an international driving permit (IDP)",
+            href: "#",
+            classes: "govuk-link govuk-link--no-visited-state"
+          }, {
+            text: "Driving if you move abroad",
+            href: "#",
+            classes: "govuk-link govuk-link--no-visited-state"
+          }
+        ]
+      }) }}
+
+    </div>
+
+  </div>
+
+
+  <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-3">
+
+      <h2 class="govuk-heading-l">Driving abroad on holiday</h2>
+
+      {{ govukWarningText({
+        html: 'The rules for driving, passports, EHIC cards, pet travel and more may change after the UK leaves the EU. <a class="govuk-link--no-visited-state" href="#">Act now so you can travel as planned</a>.',
+        iconFallbackText: "Warning"
+      }) }}
+
+      <h2 class="govuk-heading-m">Take your UK driving licence</h2>
+
+      <p>You need your Great Britain or Northern Ireland driving licence to drive abroad. Check yours is still valid and <a class="govuk-link govuk-link--no-visited-state" href="#">renew your driving licence online</a> if it’s expired or about to expire. You’ll need to apply to renew your licence at least a week before you travel.</p>
+
+      <p>If you’re taking your own vehicle, you also need to take your log book (V5C) and your insurance certificate.</p>
+
+      <p>If you’re taking a vehicle abroad that you’ve hired or leased in the UK, you’ll need a <a class="govuk-link govuk-link--no-visited-state" href="#">VE103 certificate</a>.</p>
+
+      <h2 class="govuk-heading-m">Check if you need an international driving permit (IDP)</h2>
+
+      <p>If you’re driving outside the EU, you might need an international driving permit (IDP). <a class="govuk-link govuk-link--no-visited-state" href="#">Check if you need an IDP</a>.</p>
+
+      <p>You can <a class="govuk-link govuk-link--no-visited-state" href="#">get IDPs over the counter at the Post Office</a>. You might need one for each country you’re visiting.</p>
+
+      <p>Do not apply for an IDP if you’re moving abroad. You’ll need to either <a class="govuk-link govuk-link--no-visited-state" href="#">exchange your UK licence or apply for a new one in the country you’re moving to</a>.</p>
+
+      <h3 class="govuk-heading-s">Driving in Europe after Brexit</h3>
+
+      <p>If the UK leaves the EU without a deal, you might need an IDP to drive in the EU and European Economic Area (EEA). <a class="govuk-link govuk-link--no-visited-state" href="#">Check if you’ll need an IDP</a>.</p>
+
+      <h2 class="govuk-heading-m">Check the overseas driving rules</h2>
+
+      <p>Make sure you follow overseas driving rules, including local speed limits and drink driving laws. You may be breaking the law and get a fine if you do not.</p>
+
+      <p>Depending on the country you’re visiting you may need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>extra equipment - for example, you need a reflective jacket and a warning triangle in many countries</li>
+        <li>emission stickers (permits) in some European cities - you may need to buy these weeks before you go abroad</li>
+        <li>headlight converter stickers</li>
+        <li>a GB sticker - if you do not have a GB number plate with a Euro symbol</li>
+      </ul>
+
+      <p>If you’re hiring a car, it’s your responsibility to check you have the equipment you need.</p>
+
+      <p><a class="govuk-link govuk-link--no-visited-state" href="#">Check the rules in European countries on the AA website</a>.</p>
+
+      <p><a class="govuk-link govuk-link--no-visited-state" href="#">Check the travel advice for countries outside Europe</a>.</p>
+
+      <h2 class="govuk-heading-m">Check your insurance if you’re taking your own vehicle</h2>
+
+      <p>Within the EU, your UK vehicle insurance gives you a minimum of third party cover to drive your vehicle in the EU. Check with your insurer if your policy covers extra things like theft or damage.</p>
+
+      <p>Outside the EU, you may need additional insurance and a ‘green card’ to show you’re covered. <a class="govuk-link govuk-link--no-visited-state" href="#">Check the travel advice for countries outside the EU</a>.</p>
+
+      <h2 class="govuk-heading-m">Towing your trailer or caravan abroad</h2>
+
+      <p>Check if you need to <a class="govuk-link govuk-link--no-visited-state" href="#">register your trailer</a> before you can take it abroad.</p>
+
+      <p>Outside the EU, you may need additional insurance and a ‘green card’ for each trailer or caravan you tow. Check with your insurance provider before you travel.</p>
+
+      <h2 class="govuk-heading-m">Hiring a car abroad</h2>
+
+      <p>Your hire company may ask to see your driving licence information when you pick up the car. You can share this by <a class="govuk-link govuk-link--no-visited-state" href="#">getting a licence ‘check code’</a>. You can do this up to 21 days before your trip.</p>
+
+      <p>If you’re hiring a car, insurance is included. Check what you’re covered for with the hire company.</p>
+
+      {{ appPreviousNextNavigation({
+        next: {
+          href: "#",
+          title: {
+            text: "Next page"
+          },
+          label: {
+            text: "Check if you need an international driving permit (IDP)"
+          }
+        }
+      }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      {{ appStepByStepNavigationRelatedLinks({
+        items: [{
+          text: "Drive abroad: step by step",
+          href: "#"
+        }]
+      }) }}
+
+      {{ appStepByStepNavigation({
+        id: 'step-by-step-navigation',
+        small: true,
+        steps: [{
+          title: {
+            text: "Check where you can use your licence"
+          },
+          contents: [
+            {
+              html: '<p class="app-step-nav__paragraph"><a class="app-step-nav__link govuk-link govuk-link--no-visited-state" href="#">Check the rules for using your driving licence abroad.</a></p>'
+            },
+            {
+              text: "You may need an international driving permit (IDP) if you’re going to drive outside the EU."
+            },
+            {
+              html: '<p class="app-step-nav__paragraph"><a class="app-step-nav__link" href="#">Check if you need an IDP</a></p>'
+            }
+          ]
+        },
+        {
+          title: {
+            text: "Apply for an international driving permit (IDP)"
+          },
+          contents: [
+            {
+              html: '<p class="app-step-nav__paragraph"><a class="app-step-nav__link" href="#">Get an IDP in person at the Post Office</a> - £5.50</p>'
+            }
+          ]
+        },
+        {
+          title: {
+            text: "Get insurance"
+          },
+          contents: [
+            {
+              html: '<p class="app-step-nav__paragraph"><a class="app-step-nav__link" href="#">Check if your vehicle insurance covers you for the countries you’re driving through</a></p>'
+            },
+            {
+              text: "Check this with your car hire company if you’re hiring a vehicle."
+            }
+          ]
+        },
+        {
+          title: {
+            text: "Prepare the documents you need to take with you"
+          },
+          contents: [
+            {
+              html: '<p class="app-step-nav__paragraph"><a class="app-step-nav__link" href="#">Check what documents you need to take a vehicle out of the UK</a></p>'
+            },
+            {
+              text: "If you’re hiring a car you may need to share your driving licence information with the hire company."
+            },
+            {
+              html: '<p class="app-step-nav__paragraph"><a class="app-step-nav__link" href="#">Get a ‘check code’ to share your driving licence information</a></p>'
+            },
+            {
+              text: "If you got your licence in Northern Ireland, you’ll need to show the rental company your paper counterpart instead."
+            }
+          ]
+        },
+        {
+          title: {
+            text: "Check the rules for the country you’re travelling to"
+          },
+          contents: [
+            {
+              text: "The rules for driving may be different in the country you’re going to. For example, drink-driving rules might be different or you might need to carry extra equipment in your car."
+            },
+            {
+              html: '<p class="app-step-nav__paragraph"><a class="app-step-nav__link" href="#">Check if you need to display a country sticker on your vehicle</a></p>'
+            },
+            {
+              html: '<p class="app-step-nav__paragraph"><a class="app-step-nav__link" href="#">Check the rules for the European country you’re travelling to on the AA website</a></p>'
+            },
+            {
+              html: '<p class="app-step-nav__paragraph"><a class="app-step-nav__link" href="#">Check the travel advice for countries outside Europe</a></p>'
+            },
+            {
+              text: "When you have your documents, insurance and any extra equipment you need you can drive abroad."
+            }
+          ]
+        }
+      ]
+      }) }}
+
+      {{ appRelatedNavigation({
+        heading: {
+          text: "Brexit"
+        },
+        sections: [{
+          items: [{
+            heading: {
+              text: "Check what you need to do"
+            },
+            href: "#",
+            classes: "app-related-navigation__section-link--other govuk-link govuk-link--no-visited-state"
+          }]
+        }]
+      }) }}
+
+    </div>
+
+  </div>
+
+{% endblock %}

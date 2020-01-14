@@ -22,13 +22,5 @@ router.get('/options/2', (req, res) => {
   res.render('2');
 });
 
-router.get('/options/3', (req, res) => {
-  res.render('3');
-});
-
-router.get('/options/4', (req, res) => {
-  res.render('4');
-});
-
 
 module.exports = router;

@@ -257,7 +257,7 @@
 
     .app-step-nav__button {
       &:focus {
-        @include govuk-focused-text;
+        color: $govuk-focus-text-colour !important;
 
         .app-step-nav__toggle-link {
           @include govuk-focused-text;
