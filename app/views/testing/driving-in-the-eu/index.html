@@ -7,14 +7,13 @@
 
 
 {% block beforeContent %}
-{{ govukPhaseBanner({
+{# {{ govukPhaseBanner({
   tag: {
     text: "prototype",
     classes: "app-tag--prototype"
   },
   html: 'This is a prototype – your <a class="govuk-link govuk-link--no-visited-state" href="#">feedback</a> will help us to improve it.'
-}) }}
-
+}) }} #}
 {{ govukBreadcrumbs({
   items: [
     {
@@ -51,19 +50,36 @@
   </div>
 
 
-  <hr class="govuk-section-break govuk-section-break--visible">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full">
+
+      <!-- Notification -->
+      <!--div class="app-c-notice app-c-notice--black govuk-!-margin-bottom-5" aria-label="Notice" role="region">
+        <h2 class="app-c-notice__title">The UK has left the EU with a deal</h2>
+        <p class="govuk-body">You do not need to follow this guidance now. It will only apply if the UK and EU do not reach an agreement.</p>
+        <p class="govuk-body govuk-!-margin-bottom-0">For current information, read <a class="govuk-link govuk-link--no-visited-state" href="/driving-in-the-eu/driving-abroad">Driving abroad</a></p>
+      </div-->
+
+      <div class="app-c-notice app-c-notice--black govuk-!-margin-bottom-5" aria-label="Notice" role="region">
+        <h2 class="app-c-notice__title">Do not follow this guidance</h2>
+        <p class="govuk-body">The UK and EU are holding talks on a new agreement. This page will only apply if the UK and EU do not reach an agreement.</p>
+        <p class="govuk-body govuk-!-margin-bottom-0">For current information, read <a class="govuk-link govuk-link--no-visited-state" href="/driving-in-the-eu/driving-abroad">Driving abroad</a></p>
+      </div>
+
+    </div>
+
+  </div>
 
 
   {{ appPublisherMetadata({
-    classes: "govuk-!-margin-bottom-8",
     published: {
       text: "Published",
-      timestamp: "2019-02-04T15:42:37.000+00:00"
+      timestamp: "2019-08-12T15:42:37.000+00:00"
     },
-    linkToHistory: {
-      href: "#",
-      text: "see all updates",
-      classes: "govuk-link--no-visited-state"
+    lastUpdated: {
+      text: "Last updated",
+      timestamp: "2020-01-21T12:15:42.000+00:00"
     },
     sections: [{
       heading: {
@@ -73,18 +89,10 @@
         heading: {
           text: "Department for Transport"
         },
-        href: "#",
-        classes: "govuk-link--no-visited-state"
+        href: "#"
       }]
     }]
   }) }}
-
-
-  <div class="app-c-notice" aria-label="Notice" role="region">
-    <h2 class="app-c-notice__title">The UK has left the EU with a deal</h2>
-    <p class="govuk-body">You do not need to follow this guidance now. It will only apply if the UK and EU do not reach an agreement.</p>
-    <p class="govuk-body govuk-!-margin-bottom-0">For current information, read <a class="govuk-link govuk-link--no-visited-state" href="/driving-in-the-eu/driving-abroad">Driving abroad</a></p>
-  </div>
 
 
   <div class="govuk-grid-row">
@@ -215,7 +223,6 @@
         }
       }) }}
 
-
       {{ appRelatedNavigation({
         attributes: {
           id: "related-navigation-toggle"
@@ -234,7 +241,7 @@
           {
             classes: "govuk-link--no-visited-state",
             heading: {
-              text: "Brexit"
+              text: "Transition period"
             },
             href: "#"
           }]
@@ -258,12 +265,12 @@
 
       {{ appRelatedNavigation({
         heading: {
-          text: "Brexit"
+          text: "Transition period"
         },
         sections: [{
           items: [{
             heading: {
-              text: "Check what you need to do"
+              text: "Find out what it means for you"
             },
             href: "#",
             classes: "app-related-navigation__section-link--other govuk-link govuk-link--no-visited-state"

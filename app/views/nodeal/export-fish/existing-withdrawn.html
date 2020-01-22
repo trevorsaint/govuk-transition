@@ -7,14 +7,13 @@
 
 
 {% block beforeContent %}
-{{ govukPhaseBanner({
+{# {{ govukPhaseBanner({
   tag: {
     text: "prototype",
     classes: "app-tag--prototype"
   },
   html: 'This is a prototype – your <a class="govuk-link govuk-link--no-visited-state" href="#">feedback</a> will help us to improve it.'
-}) }}
-
+}) }} #}
 {{ govukBreadcrumbs({
   items: [
     {
@@ -51,7 +50,25 @@
   </div>
 
 
-  <hr class="govuk-section-break govuk-section-break--visible">
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full">
+
+      <!-- Notification -->
+      <div class="app-c-notice app-c-notice--black govuk-!-margin-bottom-5" aria-label="Notice" role="region">
+        <h2 class="app-c-notice__title">This publication was withdrawn on 1 February 2020</h2>
+        <p class="govuk-body">The UK has left the EU with a deal and is negotiating new arrangements with the EU.</p>
+        <p class="govuk-body">If new arrangements are not agreed then this guidance will apply from 1 January 2021.<p>
+        <p class="govuk-body govuk-!-margin-bottom-1">Current guidance:</p>
+        <ul class="govuk-list govuk-!-margin-bottom-0">
+          <li><a class="govuk-link govuk-link--no-visited-state" href="#">Apply for an otter license</a></li>
+          <li><a class="govuk-link govuk-link--no-visited-state" href="#">Register your net</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
 
 
   {{ appPublisherMetadata({
@@ -88,18 +105,6 @@
       }]
     }]
   }) }}
-
-
-  <div class="app-c-notice" aria-label="Notice" role="region">
-    <h2 class="app-c-notice__title">This publication was withdrawn on 1 February 2020</h2>
-    <p class="govuk-body">The UK has left the EU with a deal and is negotiating new arrangements with the EU.</p>
-    <p class="govuk-body">If new arrangements are not agreed then this guidance will apply from 1 January 2021.<p>
-    <p class="govuk-body govuk-!-margin-bottom-1">Current guidance:</p>
-    <ul class="govuk-list govuk-!-margin-bottom-0">
-      <li><a class="govuk-link govuk-link--no-visited-state" href="#">Apply for an otter license</a></li>
-      <li><a class="govuk-link govuk-link--no-visited-state" href="#">Register your net</a></li>
-    </ul>
-  </div>
 
 
   <div class="govuk-grid-row">
@@ -324,8 +329,8 @@
       <div class="app-related-navigation">
 
         <div class="govuk-!-margin-bottom-6">
-          <h2 class="app-related-navigation__main-heading">Brexit</h2>
-          <a class="govuk-link govuk-link--no-visited-state" href="#">Check what you need to do</a>
+          <h2 class="app-related-navigation__main-heading">Transition period</h2>
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Find out what it means for you</a>
         </div>
 
         <div class="app-related-navigation">

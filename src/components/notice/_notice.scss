@@ -10,6 +10,10 @@
     clear: both;
     border: 5px solid govuk-colour("blue");
 
+    .govuk-body {
+      max-width: 40em;
+    }
+
     .govuk-govspeak {
       p:last-child {
         margin-bottom: 0;
@@ -33,9 +37,43 @@
     a {
       @extend %govuk-link;
     }
+
    }
 
    .app-c-notice__description {
     @include govuk-font(19);
     margin: 0;
    }
+
+
+
+// Modifications of notice for user testing only
+.app-c-notice--black {
+  border-color: govuk-colour("black");
+
+  a:link,
+  a:visited {
+    color: govuk-colour("black") !important;
+    font-weight: bold;
+  }
+
+}
+
+
+.app-c-notice--filled {
+  background-color: govuk-colour("black");
+  color: govuk-colour("white");
+
+  .govuk-body {
+    color: govuk-colour("white");
+  }
+
+  a:link {
+    color: govuk-colour("white");
+  }
+
+  a:focus {
+    color: govuk-colour("black");
+  }
+
+}
