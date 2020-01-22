@@ -46,35 +46,35 @@
    }
 
 
+  // Modifications of notice for user testing only
+  .app-c-notice--black {
+    border-color: govuk-colour("black");
 
-// Modifications of notice for user testing only
-.app-c-notice--black {
-  border-color: govuk-colour("black");
+    a:link,
+    a:visited {
+      color: govuk-colour("black") !important;
+      font-weight: bold;
+    }
 
-  a:link,
-  a:visited {
-    color: govuk-colour("black") !important;
-    font-weight: bold;
   }
 
-}
 
-
-.app-c-notice--filled {
-  background-color: govuk-colour("black");
-  color: govuk-colour("white");
-
-  .govuk-body {
+  .app-c-notice--filled {
+    background-color: govuk-colour("blue");
     color: govuk-colour("white");
-  }
 
-  a:link,
-  a:visited {
-    color: govuk-colour("white") !important;
-  }
+    .govuk-body {
+      color: govuk-colour("white");
+    }
 
-  a:focus {
-    color: govuk-colour("black") !important;
-  }
+    a:link,
+    a:visited {
+      color: govuk-colour("white") !important;
+      font-weight: bold;
+    }
 
-}
+    a:focus {
+      color: govuk-colour("black") !important;
+    }
+
+  }
