@@ -68,12 +68,13 @@
     color: govuk-colour("white");
   }
 
-  a:link {
-    color: govuk-colour("white");
+  a:link,
+  a:visited {
+    color: govuk-colour("white") !important;
   }
 
   a:focus {
-    color: govuk-colour("black");
+    color: govuk-colour("black") !important;
   }
 
 }
