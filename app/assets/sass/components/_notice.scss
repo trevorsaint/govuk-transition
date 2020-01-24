@@ -36,5 +36,5 @@
 
 .govuk-notice__link {
   @include govuk-font(19, $weight: bold);
-  @extend %govuk-link;
+  @include govuk-link-style-no-visited-state;
 }
