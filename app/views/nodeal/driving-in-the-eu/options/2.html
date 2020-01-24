@@ -17,13 +17,6 @@
 
 
 {% block beforeContent %}
-  {# {{ govukPhaseBanner({
-    tag: {
-      text: "prototype",
-      classes: "app-tag--prototype"
-    },
-    html: 'This is a prototype – your <a class="govuk-link govuk-link--no-visited-state" href="#">feedback</a> will help us to improve it.'
-  }) }} #}
   {{ appStepByStepNavigationHeader({
     heading: {
       text: "Drive abroad: step by step",
@@ -265,6 +258,13 @@
               text: "Find out what it means for you"
             },
             href: "#",
+            classes: "app-related-navigation__section-link--other govuk-link govuk-link--no-visited-state"
+          },
+          {
+            heading: {
+              text: "Give feedback"
+            },
+            href: "https://docs.google.com/forms/d/e/1FAIpQLScbeBCEMPytFfjm9jAczI6F_iXd4mmmvRc-w7lN8E35bpKIlw/viewform",
             classes: "app-related-navigation__section-link--other govuk-link govuk-link--no-visited-state"
           }]
         }]
